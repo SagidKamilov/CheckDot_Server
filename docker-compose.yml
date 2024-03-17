@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15-alpine
+    hostname: "checkdot-db"
+    container_name: checkdot-db
+    restart: always
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "admin1234"
+      POSTGRES_DB: "checkdot"
+    ports:
+      - "5432:5432"
+    networks:
+      - checkdot-net
+  application:
+    container_name: checkdot-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DB_USERNAME: "admin"
+      DB_PASSWORD: "admin1234"
+      DB_NAME: "checkdot"
+      DB_HOST: db
+      DB_PORT: "5432"
+    ports:
+      - "8181:8181"
+    networks:
+      - checkdot-net
+    depends_on:
+      - db
+networks:
+  checkdot-net:
+    name: checkdot-net
