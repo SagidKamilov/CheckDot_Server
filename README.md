@@ -1,7 +1,7 @@
-![Static Badge](https://img.shields.io/badge/3.x-none?style=flat&logo=Spring%20Boot&label=Spring%20Boot)
-![Static Badge](https://img.shields.io/badge/%20-%20grey?style=flat&logo=Docker&label=Docker&labelColor=grey&color=grey)
+![Static Badge](https://img.shields.io/badge/3.x-orange?style=flat&logo=Spring%20Boot&logoColor=white&label=Spring%20Boot&labelColor=green)
+![Static Badge](https://img.shields.io/badge/%20-%20orange?style=flat&logo=Docker&logoColor=white&label=Docker&labelColor=blue)
+![Static Badge](https://img.shields.io/badge/15--alpine-orange?style=flat&logo=PostgreSQL&logoColor=white&label=PostgreSQL&labelColor=blue)
 
-![Static Badge](https://img.shields.io/badge/Docker-blue)
 
 
 # Spring Boot, PostgreSQL JPA, Rest API
