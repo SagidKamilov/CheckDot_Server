@@ -66,6 +66,16 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public void deleteUser(Long userId){
+        Optional<User> foundUser = userRepository.findById(userId);
+        if (foundUser.isPresent()){
+            userRepository.deleteById(userId);
+        } else {
+            throw new NotFoundException();
+        }
+    }
+
     public List<ResponseUserDTO> getAllUsers(){
         List<User> allUsers = userRepository.findAll();
         List<ResponseUserDTO> allUsersDTO = new ArrayList<>();

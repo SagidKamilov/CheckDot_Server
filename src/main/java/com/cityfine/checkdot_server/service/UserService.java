@@ -9,6 +9,7 @@ public interface UserService {
     ResponseUserDTO createUser(RequestUserDTO requestUserDTO);
 
     ResponseUserDTO existsByUser(RequestUserDTO requestUserDTO);
+    void deleteUser(Long userId);
 
     User getUserByID(Long userId);
 }
