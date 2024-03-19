@@ -25,7 +25,7 @@ services:
       DB_HOST: db
       DB_PORT: "5432"
     ports:
-      - "8181:8181"
+      - "8080:8080"
     networks:
       - checkdot-net
     depends_on:
