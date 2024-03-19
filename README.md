@@ -1,4 +1,8 @@
-[![Build Status](https://travis-ci.com/coma123/Spring-Boot-Blog-REST-API.svg?branch=development)](https://travis-ci.com/coma123/Spring-Boot-Blog-REST-API) [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=coma123_Spring-Boot-Blog-REST-API&metric=alert_status)](https://sonarcloud.io/dashboard?id=coma123_Spring-Boot-Blog-REST-API) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3706/badge)](https://bestpractices.coreinfrastructure.org/projects/3706)
+![Static Badge](https://img.shields.io/badge/3.x-none?style=flat&logo=Spring%20Boot&label=Spring%20Boot)
+![Static Badge](https://img.shields.io/badge/%20-%20grey?style=flat&logo=Docker&label=Docker&labelColor=grey&color=grey)
+
+![Static Badge](https://img.shields.io/badge/Docker-blue)
+
 
 # Spring Boot, PostgreSQL JPA, Rest API
 
@@ -15,15 +19,15 @@ git clone https://github.com/coma123/Spring-Boot-Blog-REST-API.git
 
 **2. Изменить переменные среды для вашего пользования**
 ```bash
-Откройте Dockerfile и замените переменные среды, указанные в Dockerfile на ваши значениея
+Откройте Dockerfile и замените переменные среды, указанные в Dockerfile, на ваши значениея
 ```
 
-**3. Запустите сборку приложения
+**3. Запустите сборку приложения**
 ```bash
 docker compose up/docker-compose up
 ```
 
-**4. Ваше приложение будет собрано. Docker запустит контейнеры с приложением и базой.
+**4. Ваше приложение будет собрано. Docker запустит контейнеры с приложением и БД.**
 Для более комфортной работы я советую установить плагин docker в вашу среду разработки. Так вы сможете отслеживать повдеение и легко управлять docker контейнерами 
 
 приложение будет доступно по адресу:
@@ -46,21 +50,21 @@ http://localhost:8080
 
 | Метод | Url | Описание | Пример валидного тела запроса | Пример тела ответа |
 | ------ | --- | ----------- | ------------------------- | ------------------ |
-| GET    | /api/v1/user/all | Получить список всех пользователей | | |
-| DELETE | /api/v1/user/{userId} | Удалить пользователя | | |
+| GET    | /api/v1/user/all | Получить список всех пользователей | тела нет | |
+| DELETE | /api/v1/user/{userId} | Удалить пользователя | тела нет | |
 
 ### Claim
 
 | Метод | Url | Описание | Пример валидного тела запроса | Пример тела ответа |
 | ------ | --- | ----------- | ------------------------- | ------------------ |
 | GET    | /api/v1/claim/all | Получить отсортированный по рейтингу список всех претензий | | |
-| GET    | /api/v1/claim/{claimId} | Получить претензию | | |
-| GET    | /api/v1/claim/{userId}/all | Получить список всех претензий пользователя | | |
+| GET    | /api/v1/claim/{claimId} | Получить претензию | тела нет | |
+| GET    | /api/v1/claim/{userId}/all | Получить список всех претензий пользователя |тела нет | |
 | POST   | /api/v1/claim/{userId} | Создать претензию пользователя | [JSON](#claimcreate) | |
-| PATCH  | /api/v1/claim/{claimId}/uprating | Поднять рейтинг претензии | | |
-| PATCH  | /api/v1/claim/{claimId}/downrating | Понизить рейтинг претензии | | |
+| PATCH  | /api/v1/claim/{claimId}/uprating | Поднять рейтинг претензии | тела нет | |
+| PATCH  | /api/v1/claim/{claimId}/downrating | Понизить рейтинг претензии | тела нет | |
 | PUT    | /api/v1/claim/{claimId} | Обновить претензию | [JSON](#claimupdate) | |
-| DELETE | /api/v1/claim/{claimId} | Удалить претензию | | |
+| DELETE | /api/v1/claim/{claimId} | Удалить претензию | тела нет | |
 
 ##### <a id="signup">Sign Up -> /api/v1/user/singup</a>
 ```json
@@ -98,5 +102,3 @@ http://localhost:8080
     "path_image":"url к изображению" | Option
 }
 ```
-
-![segment](https://api.segment.io/v1/pixel/track?data=ewogICJ3cml0ZUtleSI6ICJwcDJuOTU4VU1NT21NR090MWJXS0JQd0tFNkcydW51OCIsCiAgInVzZXJJZCI6ICIxMjNibG9nYXBpMTIzIiwKICAiZXZlbnQiOiAiQmxvZ0FwaSB2aXNpdGVkIiwKICAicHJvcGVydGllcyI6IHsKICAgICJzdWJqZWN0IjogIkJsb2dBcGkgdmlzaXRlZCIsCiAgICAiZW1haWwiOiAiY29tcy5zcHVyc0BnbWFpbC5jb20iCiAgfQp9)
