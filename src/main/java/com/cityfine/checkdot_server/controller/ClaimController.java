@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import com.cityfine.checkdot_server.exceptions.NotFoundException;
 import com.cityfine.checkdot_server.service.impl.CheckDotServiceImpl;
 import com.cityfine.checkdot_server.service.impl.UserServiceImpl;
-import com.cityfine.checkdot_server.entity.Claim;
 
 import java.util.List;
 
