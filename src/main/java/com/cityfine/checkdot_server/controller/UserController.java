@@ -21,7 +21,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("create")
+    @PostMapping("singup")
     public ResponseEntity<ResponseUserDTO> createUser(@RequestBody RequestUserDTO requestUserDTO){
         try{
             ResponseUserDTO responseUserDTO = userService.createUser(requestUserDTO);
@@ -31,7 +31,7 @@ public class UserController {
         }
     }
 
-    @PostMapping("check")
+    @PostMapping("signin")
     public ResponseEntity<ResponseUserDTO> checkUser(@RequestBody RequestUserDTO requestUserDTO){
         ResponseUserDTO responseUserDTO = userService.existsByUser(requestUserDTO);
         if (responseUserDTO != null) {
@@ -41,7 +41,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("getall")
+    @GetMapping("")
     public ResponseEntity<List<ResponseUserDTO>> getAllUsers(){
         try{
             return ResponseEntity.status(HttpStatus.OK).body(userService.getAllUsers());
