@@ -25,7 +25,7 @@ public class ClaimController {
         this.userService = userService;
     }
 
-    @PostMapping("create/{userId}")
+    @PostMapping("{userId}")
     public ResponseEntity<ResponseClaimDTO> createNewClaim(@PathVariable("userId") Long userId, @RequestBody RequestClaimDTO requestClaimDTO){
         try{
             ResponseClaimDTO createdResponseClaimDTO = checkDotService.createClaim(userId, requestClaimDTO);
@@ -35,7 +35,7 @@ public class ClaimController {
         }
     }
 
-    @GetMapping("get/{claimId}")
+    @GetMapping("{claimId}")
     public ResponseEntity<ResponseClaimDTO> getClaimById(@PathVariable("claimId") Long claimId){
         try{
             ResponseClaimDTO foundClaim = checkDotService.getClaimById(claimId);
@@ -45,7 +45,7 @@ public class ClaimController {
         }
     }
 
-    @PatchMapping("uprating/{claimId}")
+    @PatchMapping("{claimId}/uprating")
     public ResponseEntity<ResponseClaimDTO> upRatingClaim(@PathVariable("claimId") Long claimId){
         try{
             ResponseClaimDTO newRatingClaim = checkDotService.upRatingClaim(claimId);
@@ -55,7 +55,7 @@ public class ClaimController {
         }
     }
 
-    @PatchMapping("downrating/{claimId}")
+    @PatchMapping("{claimId}/downrating")
     public ResponseEntity<ResponseClaimDTO> downRatingClaim(@PathVariable("claimId") Long claimId){
         try{
             ResponseClaimDTO newRatingClaim = checkDotService.downRatingClaim(claimId);
@@ -65,7 +65,7 @@ public class ClaimController {
         }
     }
 
-    @GetMapping("getall")
+    @GetMapping("")
     public ResponseEntity<List<ResponseClaimDTO>> getAllClaimByRating() {
         try{
             return ResponseEntity.status(HttpStatus.OK).body(checkDotService.getAllClaimByRating());
@@ -74,7 +74,7 @@ public class ClaimController {
         }
     }
 
-    @GetMapping("getall/{userId}")
+    @GetMapping("{userId}")
     public ResponseEntity<List<ResponseClaimDTO>> getAllClaimByUser(@PathVariable("userId") Long userId){
         try{
             return ResponseEntity.status(HttpStatus.OK).body(checkDotService.getClaimListByUserId(userId));
@@ -83,7 +83,7 @@ public class ClaimController {
         }
     }
 
-    @PutMapping("update/{claimId}")
+    @PutMapping("{claimId}")
     public ResponseEntity<ResponseClaimDTO> updateClaim(@PathVariable("claimId") Long claimId, @RequestBody RequestClaimDTO requestClaimDTO){
         try{
             ResponseClaimDTO newClaim = checkDotService.updateClaim(claimId, requestClaimDTO);
@@ -93,7 +93,7 @@ public class ClaimController {
         }
     }
 
-    @DeleteMapping("delete/{claimId}")
+    @DeleteMapping("{claimId}")
     public ResponseEntity<ResponseClaimDTO> deleteClaim(@PathVariable("claimId") Long claimId){
         try{
             checkDotService.deleteClaim(claimId);
